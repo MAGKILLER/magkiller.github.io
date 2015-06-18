@@ -1,0 +1,60 @@
+html {
+	margin: 0;
+	padding: 0;
+	}
+body {
+	background-color:#eee
+	
+}
+h1{
+	font-size:2.5em;
+	font-family:'Roboto', sans-serif;;
+	height:20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+	float: left;
+	background-color:#444;
+	font-size:1.5em;
+	font-family:黑体,微软雅黑;
+}
+
+#wrapper{
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+nav{
+	float:left;
+}
+
+a:link{
+	color:white;
+	text-decoration:none;
+}
+a:visited{
+	color:white;
+	text-decoration:none;
+}
+a:hover{
+	color:white;
+	text-decoration:none;
+	background-color:#000;
+}
+a:active{
+	color:white;
+	text-decoration:none;
+}
+a{
+	height:50px;	
+	width:80px; 
+    line-height:50px;
+	text-align:center;
+	display: block;
+}
