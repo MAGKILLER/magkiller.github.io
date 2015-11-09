@@ -45,6 +45,36 @@
 			}
 		}
 	</script>
+	<style>
+		#intro {
+	    	background-color: rgba(0,0,0,0);
+	    	-webkit-animation-name: select_animation; /* Chrome, Safari, Opera */
+	    	-webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+		-webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+	    	animation-name: select_animation;
+	    	animation-duration: 4s;
+		animation-iteration-count: infinite;
+		}
+
+		/* Chrome, Safari, Opera */
+		@-webkit-keyframes select_animation {
+		    0%   {background-color: rgba(0,0,0,0);width: 100%;}
+		    74%  {background-color: rgba(0,0,0,0);width: 100%;}
+		    75%  {background-color: rgba(0,0,0,1);width: 1%;}
+		    87%  {background-color: rgba(0,0,0,1);width: 50%;}
+		    100% {background-color: rgba(0,0,0,1);width: 100%;}
+		}
+		
+		/* Standard syntax */
+		@keyframes select_animation {
+		    0%   {background-color: rgba(0,0,0,0);width: 100%;}
+		    74%  {background-color: rgba(0,0,0,0);width: 100%;}
+		    75%  {background-color: rgba(0,0,0,1);width: 1%;}
+		    87%  {background-color: rgba(0,0,0,1);width: 50%;}
+		    100% {background-color: rgba(0,0,0,1);width: 100%;}
+		}
+
+	</style> 
 </head>
     
 <body>
