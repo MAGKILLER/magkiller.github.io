@@ -13,7 +13,9 @@ h1{
 	margin: 0;
     float:left;
     color: white;
-    text-shadow: 0 0 5px #41f468;
+    -webkit-text-shadow: 0 0 3px #41f468;
+    -moz-text-shadow: 0 0 3px #41f468;
+    text-shadow: 0 0 3px #41f468;
 }
 h2{
     font-size:2.5em;
@@ -21,7 +23,7 @@ h2{
 	margin: 0;
     color: white;
     font-weight: bold;
-    text-shadow: 0 0 3px #41f468;
+    text-align: center;
 }
 h3{
     font-size:1.5em;
@@ -40,19 +42,15 @@ li{
 	float: left;
 	font-size:1.5em;
 	font-family:SimHei,Microsoft YaHei;
-    text-shadow: 0 0 3px #41f468;
 }
-
 .wrapper{
 	width: 1024px;
 	margin-left:auto;
 	margin-right:auto;
 }
-
 #nav{
 	float:right;
 }
-
 #nav a:link{
 	color:white;
 	text-decoration:none;
@@ -84,6 +82,8 @@ li{
     width:100%; 
     height:45px;
     background-color:rgba(68,68,68,0.6);
+    -webkit-box-shadow: 0 5px 2px grey;
+    -moz-box-shadow: 0 5px 2px grey;
     box-shadow: 0 5px 2px grey;
     }
 .mid{
@@ -94,18 +94,22 @@ li{
     height: 250px;
     width: 1024px;
     margin-bottom: 50px;
+    -webkit-box-shadow: 10px 10px 5px grey;
+    -moz-box-shadow: 10px 10px 5px grey;
     box-shadow: 10px 10px 5px grey;
 }
-
 iframe{
     margin: 25px;
     float:left;
+    -webkit-box-shadow: 0 0 5px #41f468;
+    -moz-box-shadow: 0 0 5px #41f468;
     box-shadow: 0 0 5px #41f468;
 }
 .descrip{
     
     color: white;
     font-family:SimHei,Microsoft YaHei;
+    margin-bottom: 25px;
 }
 .infoBox a{
 
@@ -114,22 +118,51 @@ iframe{
     color: white;
 	text-decoration:none;
 }
-.infoBox  a:visited{
+.infoBox a:visited{
     color: white;
 	text-decoration:none;
+    -webkit-text-shadow: 0 0 3px #41f468;
+    -moz-text-shadow: 0 0 3px #41f468;
     text-shadow: 0 0 3px #41f468;
 }
 .infoBox a:hover{
     color: white;
 	text-decoration:none;
+    -webkit-text-shadow: 0 0 3px #41f468;
+    -moz-text-shadow: 0 0 3px #41f468;
     text-shadow: 0 0 3px #41f468;
 }
 .infoBox a:active{
     color: white;
 	text-decoration:none;
 }
+.infoBox:hover{
+    background-color:rgba(41, 148, 64,0.6);
+}
 embed{
     margin: 25px;
     float:left;
+    -webkit-box-shadow: 0 0 5px #41f468;
+    -moz-box-shadow: 0 0 5px #41f468;
     box-shadow: 0 0 5px #41f468;
 }
+.btn {
+  -webkit-border-radius: 27;
+  -moz-border-radius: 27;
+  border-radius: 27px;
+  font-family: Arial,SimHei;
+  color: #ffffff;
+  font-size: 16px;
+  background: #2ae052;      
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #4acc64;
+  text-decoration: none;
+}
+.infoBox img{
+    width: 355;
+    height: 200px;
+    margin: 25px;
+    float: left;

@@ -7,32 +7,63 @@
 	<meta name="keywords" content="游戏实况，游戏分享，美食，美食教学，Airsoft，软气枪，山地车，温哥华，延时摄影，游戏">
 	<link rel="stylesheet" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-        .cn{height:1000px;}
+    <style> 
+    intro {
+        -webkit-animation-name: intro; /* Chrome, Safari, Opera */
+        -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+        -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+        animation-name: intro;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        position: relative;
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes intro {
+        0%   {opacity: 0}
+        24%  {opacity: 0}
+        25%  {opacity: 1}
+        50%  {opacity: 1}
+        74%  {opacity: 1}
+        75%  {opacity: 0}
+        100% {opacity: 0}
+    }
+
+    /* Standard syntax */
+    @keyframes intro {
+        0%   {opacity: 0}
+        24%  {opacity: 0}
+        25%  {opacity: 1}
+        50%  {opacity: 1}
+        74%  {opacity: 1}
+        75%  {opacity: 0}
+        100% {opacity: 0}
+    }
     </style>
-    </head>
-<body>
 </head>
-<body>
     
+<body>
 <div class="top">
     <div class="wrapper">
         <h1><span style="color:#41f468;">MAG</span>Killer</h1>
         <div id="nav">
         <ul>
-		<li><a href="index.html">&nbsp;主页&nbsp;</a></li>
+		<li style="background-color:rgba(199, 244, 100,0.6);"><a href="index.html">&nbsp;主页&nbsp;</a></li>
 		<li><a href="games.html">&nbsp;游戏&nbsp;</a></li>
-		<li><a href="index.html">&nbsp;美食&nbsp;</a></li>
-		<li><a href="index.html">&nbsp;杂文&nbsp;</a></li>
-        <li><a href="index.html">&nbsp;气枪&nbsp;</a></li>
-		<li><a href="index.html">&nbsp;关于&nbsp;</a></li>
+		<li><a href="foods.html">&nbsp;美食&nbsp;</a></li>
+		<li><a href="blogs.html">&nbsp;杂文&nbsp;</a></li>
+		<li><a href="about.html">&nbsp;关于&nbsp;</a></li>
 		</ul>
         </div>
     </div>
 </div>
 <div class="mid">
     <div class="wrapper">
-        <h2>你好，这里是MAGKiller!</h2>
+        <div class="wrapper">
+        <h2>你好啊 欢迎来到我的个人主页<h2>
+        <h2>我很高兴我是一名<intro>业余视频制作者！</intro><intro style="animation-delay:2s;margin:-326px;">计算机科学学生！</intro></h2>
+    </div>
+        
     </div>
 </div>
 </body>
