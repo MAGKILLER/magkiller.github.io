@@ -7,74 +7,8 @@
 	<meta name="keywords" content="游戏实况，游戏分享，美食，美食教学，Airsoft，软气枪，山地车，温哥华，延时摄影，游戏">
 	<link rel="stylesheet" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
-	<script type="text/javascript">
-		var tv = setInterval(setContent,4000);
-		var index1 = 0;
-		function setContent(){
-			if (index1 == 0){
-				display("Airsoft Gamer");
-				index1 = 1;
-			}
-			else if (index1 == 1){
-				display("Gaming Commentator");
-				index1 = 2;
-			}
-			else if (index1 == 2){
-				display("Computer Science Student");
-				index1 = 0;
-			}
-		}
-
-		
-
-		function display(content){
-			var index2 = 0;
-			var text = " ";
-			document.getElementById("intro").innerHTML = text;
-			var n = content.length;
-			var timerVar = setInterval(displayInfo,80);
-			function displayInfo(){
-    				if (index2 < n){
-       					text = text + content.charAt(index2);
-        				index2++;
-    				}
-				else {
-					clearInterval(timerVar);
-				}
-    				document.getElementById("intro").innerHTML = text;
-			}
-		}
-	</script>
-	<style>
-		#intro {
-	    	background-color: rgba(0,0,0,0);
-	    	-webkit-animation-name: select_animation; /* Chrome, Safari, Opera */
-	    	-webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
-		-webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
-	    	animation-name: select_animation;
-	    	animation-duration: 4s;
-		animation-iteration-count: infinite;
-		}
-
-		/* Chrome, Safari, Opera */
-		@-webkit-keyframes select_animation {
-		    0%   {background-color: rgba(0,0,0,0);width: 100%;}
-		    74%  {background-color: rgba(0,0,0,0);width: 100%;}
-		    75%  {background-color: rgba(0,0,0,1);width: 1%;}
-		    87%  {background-color: rgba(0,0,0,1);width: 50%;}
-		    100% {background-color: rgba(0,0,0,1);width: 100%;}
-		}
-		
-		/* Standard syntax */
-		@keyframes select_animation {
-		    0%   {background-color: rgba(0,0,0,0);width: 100%;}
-		    74%  {background-color: rgba(0,0,0,0);width: 100%;}
-		    75%  {background-color: rgba(0,0,0,1);width: 1%;}
-		    87%  {background-color: rgba(0,0,0,1);width: 50%;}
-		    100% {background-color: rgba(0,0,0,1);width: 100%;}
-		}
-
-	</style> 
+    <script src = "style.js"></script>
+        
 </head>
     
 <body>
@@ -95,8 +29,7 @@
 <div class="mid">
     <div class="wrapper">
         <div class="wrapper">
-        <h2>你好啊 欢迎来到我的个人主页<h2>
-        <h2>我很高兴我是一名<span id="intro">Computer Science Student</span></h2>
+        <h2>我是一名<span id="intro">Computer Science Student</span><span id="pointer">|</span></h2>
     </div>
         
     </div>

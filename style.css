@@ -167,3 +167,55 @@ embed{
     margin: 25px;
     float: left;
 }
+#pointer { 
+    -webkit-animation-name: pointer-anime; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    animation-name: pointer-anime;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    text-shadow: 4px 4px 2px grey;
+    color:#41f468;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes pointer-anime {
+    0%   {opacity: 0}
+    49%  {opacity: 0}
+    50%  {opacity: 1}
+    100% {opacity: 1}
+}
+
+/* Standard syntax */
+@keyframes pointer-anime {
+    0%   {opacity: 0}
+    49%  {opacity: 0}
+    50%  {opacity: 1}
+    100% {opacity: 1}
+}
+            
+#intro {
+    background-color: rgba(0,0,0,0.6);
+    -webkit-animation-name: select_animation; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    animation-name: select_animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes select_animation {
+    0%   {background-color: rgba(0,0,0,0);}
+    74%  {background-color: rgba(0,0,0,0);}
+    75%  {background-color: rgba(0,0,0,0.6);}
+    100% {background-color: rgba(0,0,0,0.6);}
+}
+
+/* Standard syntax */
+@keyframes select_animation {
+    0%   {background-color: rgba(0,0,0,0);}
+    74%  {background-color: rgba(0,0,0,0);}
+    75%  {background-color: rgba(0,0,0,0.6);}
+    100% {background-color: rgba(0,0,0,0.6);}
+}
+
