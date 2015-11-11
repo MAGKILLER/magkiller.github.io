@@ -6,6 +6,7 @@ body {
     margin:0;
     background-image: url(images/background.png);
     background-repeat: repeat;
+    padding: 0;
 }
 h1{
 	font-size:2.5em;
@@ -17,9 +18,12 @@ h1{
     -moz-text-shadow: 0 0 3px #41f468;
     text-shadow: 0 0 3px #41f468;
 }
+.top span{
+    color:#41f468;
+} 
 h2{
     font-size:2.5em;
-	font-family:SimHei,Microsoft YaHei;
+	font-family:SimHei,"Microsoft YaHei";
 	margin: 0;
     color: white;
     font-weight: bold;
@@ -27,11 +31,20 @@ h2{
 }
 h3{
     font-size:1.5em;
-	font-family:SimHei,Microsoft YaHei;
-    padding-top: 25px;
-    padding-right: 25px;
+	font-family:SimHei,"Microsoft YaHei";
     color: white;
     border-bottom: 2px solid white;
+    margin:0;
+}
+h4{
+    font-size:2.5em;
+	font-family:SimHei,"Microsoft YaHei";
+	margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid white;
+    text-shadow: 0 0 5px black;
 }
 ul {
     list-style-type: none;
@@ -41,7 +54,7 @@ ul {
 li{
 	float: left;
 	font-size:1.5em;
-	font-family:SimHei,Microsoft YaHei;
+	font-family:SimHei,"Microsoft YaHei";
 }
 .wrapper{
 	width: 1024px;
@@ -98,18 +111,11 @@ li{
     -moz-box-shadow: 10px 10px 5px grey;
     box-shadow: 10px 10px 5px grey;
 }
-iframe{
-    margin: 25px;
-    float:left;
-    -webkit-box-shadow: 0 0 5px #41f468;
-    -moz-box-shadow: 0 0 5px #41f468;
-    box-shadow: 0 0 5px #41f468;
-}
 .descrip{
-    
+    padding: 25px;
     color: white;
-    font-family:SimHei,Microsoft YaHei;
-    margin-bottom: 25px;
+    font-family:SimHei,"Microsoft YaHei";
+    margin-left: 405px;
 }
 .infoBox a{
 
@@ -139,13 +145,6 @@ iframe{
 .infoBox:hover{
     background-color:rgba(41, 148, 64,0.6);
 }
-embed{
-    margin: 25px;
-    float:left;
-    -webkit-box-shadow: 0 0 5px #41f468;
-    -moz-box-shadow: 0 0 5px #41f468;
-    box-shadow: 0 0 5px #41f468;
-}
 .btn {
   -webkit-border-radius: 27;
   -moz-border-radius: 27;
@@ -162,10 +161,10 @@ embed{
   text-decoration: none;
 }
 .infoBox img{
-    width: 355;
+    width: 355px;
     height: 200px;
-    margin: 25px;
     float: left;
+    padding: 25px;
 }
 #pointer { 
     -webkit-animation-name: pointer-anime; /* Chrome, Safari, Opera */
@@ -192,30 +191,20 @@ embed{
     50%  {opacity: 1}
     100% {opacity: 1}
 }
-            
-#intro {
-    background-color: rgba(0,0,0,0.6);
-    -webkit-animation-name: select_animation; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
-    -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
-    animation-name: select_animation;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-}
 
-/* Chrome, Safari, Opera */
-@-webkit-keyframes select_animation {
-    0%   {background-color: rgba(0,0,0,0);}
-    74%  {background-color: rgba(0,0,0,0);}
-    75%  {background-color: rgba(0,0,0,0.6);}
-    100% {background-color: rgba(0,0,0,0.6);}
+#contentWrapper{
+    padding:25px;
+    font-size: 20px;
+    background: rgba(0,0,0,0.6);
+    font-family:SimHei,"Microsoft YaHei";
+    color:white;
 }
-
-/* Standard syntax */
-@keyframes select_animation {
-    0%   {background-color: rgba(0,0,0,0);}
-    74%  {background-color: rgba(0,0,0,0);}
-    75%  {background-color: rgba(0,0,0,0.6);}
-    100% {background-color: rgba(0,0,0,0.6);}
+#contentWrapper p{
+    text-indent: 40px;
 }
-
+.codes{
+    font-family:consolas;
+    font-size: 15px;
+    background: rgb(230,230,230);
+    color: black;
+}
