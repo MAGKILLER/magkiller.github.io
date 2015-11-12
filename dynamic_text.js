@@ -1,12 +1,12 @@
-var tv = setInterval(setContent, 4000);
 var indexOfId = 0;
 var identities = [
     "Airsoft Gamer",
     "Game Commentator",
     "Food Lover",
     "Computer Science Student"
-];
+];//the words that you want to show
 var numberOfId = identities.length;
+var tv = setInterval(setContent, 4000);//loop for change the words(every 4s)
 function setContent() {
     if (indexOfId == numberOfId){
         indexOfId = 0;
@@ -21,15 +21,14 @@ function display(content) {
     var selectionTimer;
     var text = "";
     var n = content.length;
-    document.getElementById("intro").innerHTML = text;
-    setTimeout(delay, 600);
-    setTimeout(selction_delay, 3000);
+    document.getElementById("intro").innerHTML = text;//clear the text
+    setTimeout(delay, 600);//delay 0.6s after clearing
+    setTimeout(selction_delay, 3000);//wait for 3s, then star the seletion animation.
     function delay() {
-        displayTimer = setInterval(displayInfo, 80);
-        
+        displayTimer = setInterval(displayInfo, 80);//print a letter for every 0.08s. (control the speed of typing animation)
     }
     function selction_delay() {
-        selectionTimer = setInterval(selction_anime, 15);
+        selectionTimer = setInterval(selction_anime, 15);//"select" a letter for every 0.015s.(control the speed of selection animation)
     }
     function displayInfo() {
         if(indexOfLetter == 0 ) {

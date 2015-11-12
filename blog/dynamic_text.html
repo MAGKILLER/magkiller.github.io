@@ -24,14 +24,14 @@
         </div>
     </div>
 </div>
-<div class="mid">
-    <div class="wrapper">
+<div class="wrapper">
+    <div class="mid">
         <h4>动态文字效果</h4>
         <script src = "../dynamic_text.js"></script>
         <div id="contentWrapper">
             <div style="width:250px;float;font-size:20px;"><span id="intro"><span style="background:white;color:black;">Computer Science Student</span></span><span id="pointer">&#124;</span></div>
             <div>
-            <p>想必大家已经发现了，会说：“这不就是你首页的那个效果吗？”。嗯,是的，我懒得再写一个JS的文件了......虽然只是改一点变量内容。其实想要实现这个效果还是很简单的，有点js基础，或者有点编程基础的人，看一下文档就可以写出了。其实这个动画就是在模仿打字，选中和删除这三个动作，我在这里呢就主要说一下思路。</p>
+            <p>想必大家已经发现了，会说：“这不就是你首页的那个效果吗？”。嗯,是的，我懒得再写一个JS的文件了......虽然只是改一点变量内容。其实想要实现这个效果还是很简单的，有点js基础，或者有点编程基础的人，看一下文档就可以写出了。这个动画就是在模仿打字，选中和删除这三个动作，我在这里呢就主要说一下思路。</p>
                 <p>首先，我用了 <span class="codes">setInterval(setContent, 4000)</span> 这个命令来实现每间隔 <span class="codes">4000</span> (也就是4秒)就运行一次 <span class="codes">setContent</span> 来更换文字。代码如下：</p>
                 <div style="margin-left:40px;margin-right:40px;padding:20px;" class="codes">
                 var tv = setInterval(setContent, 4000);<br>
@@ -51,7 +51,7 @@
                 &nbsp;&nbsp;&nbsp;indexOfId++;<br>
                 }
                 </div>
-                <p>然后，我又用 <span class="codes">setInterval(selction_anime, 15)</span> 这个命令来实现每间隔 <span class="codes">15</span> 就运行一次 <span class="codes">selction_anime</span> 来实现依次选中的效果。代码如下：</p>
+                <p>然后，我又用 <span class="codes">setInterval(selction_anime, 15)</span> 这个命令来实现每间隔 <span class="codes">15</span> 就运行一次 <span class="codes">selction_anime</span> 来实现依次选中的效果。需要注意的是，我在重新生成新的文本的时候为每个字母都添加了一个ID，因此我才可以控制每一个字母的背景来产生依次变色的效果。代码如下：</p>
                 <div style="margin-left:40px;margin-right:40px;padding:20px;" class="codes">
                 function selction_anime() {<br>
                 &nbsp;&nbsp;&nbsp;var idName = "a" + indexOfSpan;<br>
@@ -70,14 +70,14 @@
                 &nbsp;&nbsp;&nbsp;}<br>
                 }
                 </div>
-                <p>最后，我又用 <span class="codes">setInterval(displayInfo, 80)</span> 这个命令来实现逐个输入。然后再加入一些细节上的东西，比如说中间的停顿。然后一个炫酷的效果就产生啦！你可以更改identities的内容来增加和减少想要显示的内容。</p>
+                <p>最后，我又用 <span class="codes">setInterval(displayInfo, 80)</span> 这个命令来实现逐个输入。也就是这一步，我为每一个字母添加了一个ID（编号从<span class="codes">a0</span>开始）然后再加入一些细节上的东西，比如说输入文字前的停顿。然后一个炫酷的效果就产生啦！你可以更改<span class="codes">identities</span>的内容来增加和减少想要显示的内容。</p>
             </div>
-            <a target="_blank" class="btn" href="style.js">查看全部代码</a>
+            <a target="_blank" class="btn" href="../dynamic_text.js">查看全部代码</a>
         </div>
-
     </div>
-        </div>
-
+    <div id="footer">
+        © 2015-2015, MAGKiller. All Rights Reserved.
+    </div>
 </div>
 </body>
 </html>
