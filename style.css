@@ -111,6 +111,7 @@ li{
     -moz-box-shadow: 10px 10px 5px grey;
     box-shadow: 10px 10px 5px grey;
     padding: 25px;
+    border-radius: 27px; 
 }
 .descrip{
     color: white;
