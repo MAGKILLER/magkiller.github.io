@@ -3,7 +3,7 @@ var identities = [
     "Airsoft Gamer",
     "Game Commentator",
     "Food Lover",
-    "Computer Science Student"
+    "CS Student"
 ];//the words that you want to show
 var numberOfId = identities.length;
 var tv = setInterval(setContent, 4000);//loop for change the words(every 4s)
