@@ -222,12 +222,3 @@ li{
 .title{
     border: 2px solid white;
 }
-@font-face {
-  font-family: MAGKILLER;
-  src: url(http://fontifyapp.com/download/pEQQzG/fontify.woff);
-}
-
-/* Then use MAGKILLER like this: */
-.DIYFont {
-  font-family: MAGKILLER, sans-serif;
-}
