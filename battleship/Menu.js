@@ -28,7 +28,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,122,89);
 (lib.Tween17 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AjKGZQhNgPgth2IhJhAQgWgThfgxQicg4CciZQhQijCfhAQAVhMBCgbICsgHQAhgIAcAAIARAAIAWADIAgAKQAsAWAYA4QB6hXBXASQA7ALAsA7QAvgGAlABIA/AFIAXAHQBLAagyBZQB9BUh9BVQgICKhUARIg/gBIgGgBIgHgCQgpBfhBAmIiZAXIgugLQgYgHgZgLQAXBmiUAtQghANgdAAQgMAAgMgCg");
 
@@ -40,7 +40,7 @@ p.nominalBounds = new cjs.Rectangle(-59.3,-41.2,118.8,82.4);
 (lib.Tween11 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(0.1,1,1).p("ANsmkIFOAzIgGBxANskvIAAh1AAJCXIJAi2IAngNAy5GlIAAhwMAglgLZApLFWIFzh3AuWEoIXfna");
 	this.shape.setTransform(-16.3,-139.9);
@@ -81,7 +81,7 @@ p.nominalBounds = new cjs.Rectangle(-138.4,-183,276.9,366.2);
 (lib.Tween3 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs0gUrQJLk7F6G6QGEGUGEkuQJMk7F5G6QGFGUGEkuQJLk8F6G6QGEGUGEkuQJMk7F6G6QGDGUGDkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJLk5F6G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZpAAAg");
 
@@ -96,7 +96,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween18 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AjKGZQhNgPgth2IhJhAQgWgThfgxQicg4CciZQhQijCfhAQAVhMBCgbICsgHQAhgIAcAAIARAAIAWADIAgAKQAsAWAYA4QB6hXBXASQA7ALAsA7QAvgGAlABIA/AFIAXAHQBLAagyBZQB9BUh9BVQgICKhUARIg/gBIgGgBIgHgCQgpBfhBAmIiZAXIgugLQgYgHgZgLQAXBmiUAtQghANgdAAQgMAAgMgCg");
 
@@ -148,7 +148,7 @@ p.nominalBounds = new cjs.Rectangle(-59.3,-41.2,118.8,82.4);
 	this.shape_9.graphics.rf(["#FFFFFF","#000000"],[0,1],12.7,-0.9,0,12.7,-0.9,46.7).s().p("AkqBfIgHgBIgJgEQgEgDgEgEQgMgLAAgQQAAgRAMgLQADgEAEgCIAFgCIAKgDIAGgBIABAAIAGABIA8gMIBFgLIA0gJIFThCIBEgNQA9AfgwArImIBFIgpAHIhsATIgmAIIgBAAQgMAMgQAAIgEAAg");
 	this.shape_9.setTransform(38,-24.1);
 
-	// 图层 2
+	// Layer 2
 	this.shape_10 = new cjs.Shape();
 	this.shape_10.graphics.f().s("#000000").ss(1,1,1).p("AIdApQAAAWgRAPQgSAQgZAAQgZAAgRgQQgSgPAAgWQAAgVASgPQARgOAZAAQAZAAASAOQARAPAAAVgAmQibIAAA5AmQjTIAAA4IAwgLIAEhIAnViMIBFgPAlgimIAxgLIBFgQIBGgPIAcgHAkvixIAAgpAimj0IACAkIACA3AjqjBIAAA1Akvg2IAAh7Am0DBQAAAWgQAPQgPAPgVAAQgWAAgPgPQgPgPAAgWQAAgVAPgQQAPgPAWAAQAVAAAPAPQAQAQAAAVgAkfC2IiAjWAEPBhICvjZ");
 	this.shape_10.setTransform(-4.3,-8.8);
@@ -169,7 +169,7 @@ p.nominalBounds = new cjs.Rectangle(-90.4,-45.4,180.9,90.8);
 (lib.Tween12 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(0.1,1,1).p("ANsmkIFOAzIgGBxANskvIAAh1Ay5GlIAAhwMAglgLZAAJCXIJAi2IAmgNApLFWIFzh3AuWEoIXfna");
 	this.shape.setTransform(-16.3,-139.9);
@@ -210,7 +210,7 @@ p.nominalBounds = new cjs.Rectangle(-138.4,-183,276.9,366.2);
 (lib.Tween10 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(0.1,1,1).p("ANsmkIFOAzIgGBxANskvIAAh1Ay5GlIAAhwMAglgLZAAJCXIJAi2IAmgNApLFWIFzh3AuWEoIXfna");
 	this.shape.setTransform(-16.3,-139.9);
@@ -251,7 +251,7 @@ p.nominalBounds = new cjs.Rectangle(-138.4,-183,276.9,366.2);
 (lib.Tween9 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs1gUrQJMk7F6G6QGEGUGEkuQJMk7F5G6QGEGUGEkuQJMk8F6G6QGEGUGEkuQJMk7F5G6QGEGUGDkuQJLk7F6G6QGEGSGEksQJMk8F6G7QGEGRGDkuQJNk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZqAAAg");
 
@@ -266,7 +266,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween8 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs0gUrQJLk7F6G6QGEGUGEkuQJMk7F5G6QGFGUGEkuQJLk8F6G6QGEGUGEkuQJMk7F6G6QGDGUGDkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJLk5F6G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZpAAAg");
 
@@ -281,7 +281,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween7 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs0gUrQJLk7F6G6QGEGUGEkuQJMk7F5G6QGFGUGEkuQJMk8F5G6QGEGUGEkuQJMk7F6G6QGEGUGCkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJMk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZpAAAg");
 
@@ -296,7 +296,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween6 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs1gUrQJMk7F6G6QGEGUGEkuQJMk7F5G6QGEGUGEkuQJMk8F6G6QGEGUGEkuQJMk7F5G6QGFGUGCkuQJLk7F6G6QGEGSGEksQJMk8F6G7QGEGRGDkuQJNk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZqAAAg");
 
@@ -311,7 +311,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween5 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs1gUrQJMk7F6G6QGEGUGEkuQJMk7F5G6QGEGUGEkuQJMk8F6G6QGEGUGEkuQJMk7F5G6QGEGUGDkuQJLk7F6G6QGEGSGEksQJMk8F6G7QGEGRGDkuQJNk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGDkuIAAO2MjZqAAAg");
 
@@ -326,7 +326,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween4 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs0gUrQJLk7F6G6QGEGUGEkuQJMk7F6G6QGEGUGEkuQJMk8F5G6QGEGUGEkuQJMk7F6G6QGEGUGCkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJMk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGEkuIAAO2MjZqAAAg");
 
@@ -341,7 +341,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Tween2 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs1gUrQJMk7F6G6QGEGUGEkuQJMk7F5G6QGEGUGEkuQJMk8F6G6QGEGUGEkuQJMk7F5G6QGEGUGDkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJMk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGEkuIAAO2MjZrAAAg");
 
@@ -356,7 +356,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.TWEEN1 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ehs1AWvMAAAgraQJMk7F6G6QGEGUGEkuQJMk7F5G6QGEGUGEkuQJMk8F6G6QGEGUGEkuQJMk7F5G6QGEGUGDkuQJMk7F5G6QGEGSGEksQJMk8F6G7QGEGRGEkuQJMk5F5G4QGEGUGEkuQJMk5F6G4QGEGUGEkuIAAO2g");
 
@@ -371,7 +371,7 @@ p.nominalBounds = new cjs.Rectangle(-697.6,-146.5,1395.2,293.1);
 (lib.Trailer = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// 图层 2
+	// Layer 2
 	this.shape = new cjs.Shape();
 	this.shape.graphics.rf(["#F7F400","rgba(255,238,0,0)"],[0.024,0.463],0,0,0,0,0,44.8).s().p("Ak1E2QiAiAAAi2QAAi0CAiBQCBiAC0gBQC2ABCACAQCBCBgBC0QABC2iBCAQiACBi2AAQi0AAiBiBg");
 	this.shape.setTransform(-131.4,-110.6);
@@ -593,7 +593,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-7.4,192.4,103.8);
 (lib.radar2 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AjwgzIHTAAQBnAwhnA3InTAAQhLgwBLg3g");
 	this.shape.setTransform(27.9,5.3);
@@ -610,7 +610,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,57.8,12.6);
 (lib.mao = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAqhXIgCBGAgDjDQADgBAGAAQAeAAAWAcQAWAcAAAnQAAAogWAbQgIALgKAGAgbheIgQhMAgdgSQgIgGgIgKQgVgbAAgoQAAgnAVgcQABgBABgBQARgVAXgEAgbheIgCBMIgECMQh1A0gRiSQg1DMDhg+QC+BTgTirQgfBwhthCIAEiRAAqhXIgthsAgbheIBFAH");
 	this.shape.setTransform(17.8,19.7);
@@ -631,7 +631,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,37.7,41.5);
 (lib.containeryellow = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAh/IA6AIAg5hpIA5AIIA6AIAAACHIAAAAAg5iHIA5AI");
 	this.shape.setTransform(122.4,37.7);
@@ -720,7 +720,7 @@ p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,148.8,93.3);
 (lib.containerred = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAh/IA6AIAg5hpIA5AIIA6AIAAACHIAAAAAg5iHIA5AI");
 	this.shape.setTransform(122.4,37.7);
@@ -805,7 +805,7 @@ p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,148.8,86.8);
 (lib.containergreen = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAh/IA6AIAg5hpIA5AIIA6AIAAACHIAAAAAg5iHIA5AI");
 	this.shape.setTransform(122.4,37.7);
@@ -890,7 +890,7 @@ p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,148.8,86.8);
 (lib.containerblue = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAh/IA6AIAg5hpIA5AIIA6AIAAACHIAAAAAg5iHIA5AI");
 	this.shape.setTransform(122.4,37.7);
@@ -975,7 +975,7 @@ p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,148.8,86.8);
 (lib.cloud2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AjXGWIg8grQgcghgVg1IhIhAQgWgThggxIg5giQg8g9B1hyQhQijCghAQApiYDZApQAjgIAeAAIA0AIIAbAMQAjAWAVAyQBDgxA5gPIBogBIAsAYQAVAQASAZQAcgDAYgBIBwAJIATAHQA6AdgtBRQB8BVh8BUQgLDAiegpQgsBohKAkIiwAIIgsgPIgQgGQAYBmiUAuQgcALgZABg");
 	this.shape.setTransform(59.3,41.2);
@@ -1221,7 +1221,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,118.7,82.4);
 (lib.cloud1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AlDEVIhJhAQgWgThfgxQgkgNgUgSQgtgrAthGQAUgdAkgkQhQijCfhAQApiYDaAqQCWglAwB5QDNiSBrCSQEYgfhVCYQB8BVh8BUQgLDAiegpQhkDsj+htQAYBmiUAuQghAMgdAAQhdAAgziGg");
 	this.shape.setTransform(59.3,41.2);
@@ -1467,7 +1467,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,118.5,82.4);
 (lib.AIRCRAFT1 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AEchWIArhSIguAOIgMAkQAEAGADALACfiLIg0gMIgzgLIg4AbIAPA9IgzgCIiBgDIgNAjICEAAIAKggACfiLIgKhuIgsAuIACA0AB2gOQAHACAFgEICShVABkggQAKAOAIAEIgZAcIAIAdIAdg7ABWg3QAHAOAHAJADlh7QASAgAdgKADlh7QAagWAOAbADlh7IhGgQADlh7IiPBEACfAZIgqAVIAjBNIApgTIgihPIgMgaICXAfIAfgfIgthVIgIgPAhoCiIDZAqIBjg3IgTgtAgCggIABASIgMAYIgVAtIgCABQABADAAADQAAAJgFAHQgEAGgHAAQgGAAgFgGQgEgHAAgJQAAgJAEgHQAFgGAGAAQADAAADABQADACACADQADAFABAFAgCggIAigWIA2gBAAegNIAPAHIgDgKIA6gQAAegNIAMgDIgKgmAgmgKIAkgWAilhPIgsgCIhXAnIBECOIhTBtIAdAcIAhgKICRhBICMhSIAEALAkaDtIADADIAegNAjKB0IApAkIA5AKAjkBkIAaAQICfhYIgCANAA7AgIghASIAKAeAA6BjQADAFAAAGQAAAJgFAFQgEAHgGAAQgGAAgFgHQgEgFAAgJQAAgIAEgHQACgDADgBQACgCAEAAQAGAAAEAGQABACABACgAA8BDIABAeIgDACAA7AgIABAjIApgYAAaAyIi7BmAgmgKIgFAmAjkBkIC+huAgNAKIArgXABdAOIgiASAk3DRIgRApIAugNAAtgGIAwAU");
 	this.shape.setTransform(32.9,25.1);
@@ -1592,7 +1592,7 @@ p.nominalBounds = new cjs.Rectangle(-68.4,-83.2,137,161.9);
 (lib.radar = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// 图层 1
+	// Layer 1
 	this.instance = new lib.radar2();
 	this.instance.setTransform(27.9,5.3,1,1,0,0,0,27.9,5.3);
 
@@ -1614,7 +1614,7 @@ p.nominalBounds = new cjs.Rectangle(-0.5,-0.5,56.8,11.6);
 (lib.cloud3 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// 图层 1
+	// Layer 1
 	this.instance = new lib.Tween17("synched",0);
 	this.instance.setTransform(59.4,41.2);
 
@@ -2080,7 +2080,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,118.8,82.4);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(19).to({startPosition:0},0).wait(1));
 
-	// 图层 9
+	// Layer 9
 	this.shape_103 = new cjs.Shape();
 	this.shape_103.graphics.rf(["#FF0000","rgba(255,0,0,0)"],[0.024,0.463],0,0,0,0,0,27.9).s().p("AjCCGQhQg3AAhPQAAhNBQg5QBRg3BxAAQBxAABRA3QBRA5AABNQAABPhRA3QhRA4hxAAQhxAAhRg4g");
 	this.shape_103.setTransform(620.8,-66.2);
@@ -2166,7 +2166,7 @@ p.nominalBounds = new cjs.Rectangle(76.9,-165.3,938.1,458.9);
 (lib.Tween13 = function() {
 	this.initialize();
 
-	// 图层 1
+	// Layer 1
 	this.instance = new lib.cloud3();
 	this.instance.setTransform(0.1,0.1,1,1,0,0,0,59.4,41.2);
 
