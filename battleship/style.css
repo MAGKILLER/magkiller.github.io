@@ -1,0 +1,28 @@
+body{
+    width:1024px;
+    margin:auto;
+    font-family: Airborne, sans-serif;
+    background-color: "black";
+    background-image: url(image/footer_lodyas.png);
+    text-shadow: 0 0 5px green;
+    color: azure;
+}
+H1{
+    text-align: center;
+    font-size:80px;
+    margin: auto;
+    color:azure;
+    text-shadow: 0 0 5px black;
+}
+canvas{
+    border: solid 5px black;
+    box-shadow: 0 0 50px black;
+
+}
+#title{
+
+}
+@font-face {
+    font-family: Airborne;
+    src: url(airborne.tff);
+}

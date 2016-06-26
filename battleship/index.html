@@ -2,58 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-        <title>BattleShip</title>
+    <title>BattleShip</title>
     <script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
     <script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
     <script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
     <script src="Menu.js"></script>
     <script src="script.js"></script>
-
-    <script>
-        var canvas, stage, exportRoot;
-
-        function init() {
-            canvas = document.getElementById("canvas");
-            exportRoot = new lib.Menu();
-
-            stage = new createjs.Stage(canvas);
-            stage.addChild(exportRoot);
-            stage.update();
-
-            createjs.Ticker.setFPS(lib.properties.fps);
-            createjs.Ticker.addEventListener("tick", stage);
-    }
-    </script>
-    <style>
-        body{
-            width:1024px;
-            margin:auto;
-            font-family: Airborne, sans-serif;
-            background-color: "black";
-            background-image: url(footer_lodyas.png);
-            text-shadow: 0 0 5px green;
-            color: azure;
-        }
-        H1{
-            text-align: center;
-            font-size:80px;
-            margin: auto;
-            color:azure;
-            text-shadow: 0 0 5px black;
-        }
-        canvas{
-            border: solid 5px black;
-            box-shadow: 0 0 50px black;
-            
-        }
-        #title{
-            
-        }
-        @font-face {
-            font-family: Airborne;
-            src: url(airborne.tff);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body  onload="init();" style="background-color:#D4D4D4" >
