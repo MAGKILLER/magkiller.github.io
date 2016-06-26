@@ -6,7 +6,7 @@ function game(){
     document.getElementById("body").innerHTML="<canvas id=\"screen\" width=\"1024\" height=\"768\"></canvas>"
     cv = document.getElementById("screen");
     ctx = cv.getContext("2d");
-    background.src = "../IMAGE/BKG.png";
+    background.src = "../image/BKG.png";
     background.onload = drawBackground;
 }
 function drawBackground(){
