@@ -3,10 +3,12 @@
 
 
 var canvas, stage, exportRoot;
-
+var menuBKMusic ;
 function init() {
     canvas = document.getElementById("canvas");
     exportRoot = new lib.Menu();
+    menuBKMusic = new sound("media/Menu_Backgroud_music.mp3")
+    menuBKMusic.play();
 
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);

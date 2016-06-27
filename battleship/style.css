@@ -17,6 +17,7 @@ H1{
 canvas{
     border: solid 5px black;
     box-shadow: 0 0 50px black;
+    background-color: white;
 
 }
 #title{
@@ -25,4 +26,43 @@ canvas{
 @font-face {
     font-family: Airborne;
     src: url(airborne.ttf);
+}
+
+button{
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+
+#container
+{
+  height: 768px;
+  position: relative;
+  width: 1024px;
+}
+#screen
+{
+  height: 100%;
+  width: 100%;
+}
+#control1
+{
+  bottom: 8px;
+  left: 12px;
+  position: absolute;
+  width: 500px;
+}
+#control2
+{
+  bottom: 8px;
+  left: 520px;
+  position: absolute;
+  width: 500px;
+}
+.empty{
+    background-color: aqua;
+}
+.attacted{
+    background-color: red;
 }
