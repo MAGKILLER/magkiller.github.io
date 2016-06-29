@@ -6,6 +6,7 @@
     <script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
     <script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
     <script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
+    <script src="constants.js"></script>
     <script src="Menu.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,8 +14,8 @@
 
 <body  onload="init();" style="background-color:#D4D4D4" >
     <H1 id="title">BATTLESHIP</H1>
-    <div id="body">
-        <div onclick="menuBKMusic.stop();game()">
+    <div id="screen">
+        <div onclick="menuBKMusic.stop();replaceScreen()">
             <canvas id="canvas" width="1024" height="768" style="background-color:#FFFFFF"></canvas>
             <H3>Click To Start the Game</H3>
         </div>
