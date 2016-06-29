@@ -1,0 +1,9 @@
+const EMPTY = -1;
+const ATTACTED = 0;
+const HAS_SHIP = 1;
+const SHIP_TYPE = 2;
+const AIRCRAFT_CARRIER = 3;
+const BATTLESHIP = 4;
+const SUBMARINE = 5;
+const CRUISER = 6;
+const DESTROYER =7;
