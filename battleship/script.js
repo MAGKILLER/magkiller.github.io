@@ -1,62 +1,120 @@
-var userMap = initialMaps();
 var ctx;
+var my_map;
+var enermy_map;
+var mouseX;
+var mouseY;
+var dragX;
+var dragY;
+var dragIndex;
+var gameStatus = 0;
+var control = document.getElementById("commandPanal");
+var myRound = false;
 
-function replaceScreen(){  
-    /*for(var i =0 ; i < 10 ; i++){  
-        for(var j =0; j < 10 ; j++){   
-            console.log(userMap[i][j].toString());
-        }
-    } */ 
-    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\" onClick=\"clicked(event)\"></canvas>"
+function replaceScreen(){ 
+    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\"></canvas>";
     ctx = document.getElementById("game").getContext("2d");
-    drawGrid(8,8,250);
-    drawGrid(266,8,750);
-    //drawGrid(516,260);
-    
-
-}
-function clicked(event){
-    ctx.font="60px airborne";
-    var rect = document.getElementById("game").getBoundingClientRect();
-    var x = event.clientX - rect.left - 5;
-    var y = event.clientY - rect.top - 5;
-    console.log(x + ", " + y );
-    //ctx.fillRect(x,y,50,50);
-    ctx.fillText("Congraduation!", x,y);
+    var temp = true;
+    //var size = document.getElementsById("title").sty
+    startRound();
 }
 
-function drawGrid(x,y,scale){
-    
-    var width = scale/11;
-    ctx.font="" + width + "px airborne";
-    ctx.fillStyle = "#DDDDFF";
-    ctx.fillRect(x+width,y+width,scale-width,scale-width);
-    ctx.strokeRect(x,y,scale,scale);
-    ctx.fillStyle = "black";
-    for(var i = 1; i <= 10 ; i++){
-        ctx.moveTo(x+i*width,y);
-        ctx.lineTo(x+i*width,y+scale);
-        ctx.stroke();
-        ctx.fillText(i,x+i*width+width/20,y+width - width/10);
-    }
-    
-    for(var i = 1; i <= 10 ; i++){
-        ctx.moveTo(x,y+i*width);
-        ctx.lineTo(x+scale,y+i*width);
-        ctx.stroke();
-        ctx.fillText(String.fromCharCode(64+i),x+width/10,y+(i+1)*width - width/10);
-    }
+function startRound(){
+    placeShip();
 }
 
-function initialMaps(){
-    var map = new Array(10);
-    for(var i =0 ; i < 10 ; i++){
-        map[i] = new Array(10);  
-        for(var j =0; j < 10 ; j++){   
-            map[i][j] = [false,false,EMPTY];
+function startGame(){
+    redraw();
+    var temp = "<button onclick=\"startRound()\">Restart</button>";
+    document.getElementById("commandPanal").innerHTML = temp;
+}
+
+function placeShip(){
+    gameStatus = PLACE_SHIP;
+    my_map = new GameMap(8,50,500,ctx);
+    enermy_map = new GameMap(516,50,500,ctx);
+    var temp = "<button onclick=\"random()\">RANDOMISE</button>";
+    temp += "<button onclick=\"startGame()\">START</button>";
+    document.getElementById("commandPanal").innerHTML = temp;
+    my_map.resetMap();
+    my_map.randomPlacment();
+    enermy_map.resetMap();
+    enermy_map.randomPlacment();
+    redraw();
+}
+
+
+function redraw(){
+    ctx.clearRect(0,0,1024,768);
+    var image = document.getElementById("BK");
+    ctx.drawImage(image , 0,0,800,600,0,0,1024,768);
+    my_map.drawMap();
+    my_map.drawMark();
+    enermy_map.drawMap();
+    ctx.font="38px airborne";
+    ctx.fillStyle="azure";
+    ctx.fillText("Your Map",8 + 170,4 + 38);
+    ctx.strokeText("Your Map",8 + 170 ,4 + 38);
+    ctx.fillText("Enermy Map",516 + 140 ,4 + 38);
+    ctx.strokeText("Enermy Map",516 + 140,4 + 38);
+}
+
+/*function drawButton(content,x,y){
+    var temp = ctx.fillStyle;
+    var temp2 = ctx.strokeStyle;
+    
+    ctx.fillStyle="#DDDDFF";
+    ctx.fillRect(x,y,BUTTON_WIDTH,BUTTON_HEIGHT);
+    ctx.font="38px airborne";
+    ctx.fillStyle="azure";
+    ctx.fillText(content,x+8,y+40);
+    ctx.strokeText(content,x+8,y+40);
+    
+    ctx.fillStyle = temp;
+    ctx.strokeStyle = temp2;
+    
+}
+function lightButton(content,x,y){
+    var temp = ctx.fillStyle;
+    var temp2 = ctx.strokeStyle;
+    
+    ctx.fillStyle="#BBBBDD";
+    ctx.fillRect(x,y,BUTTON_WIDTH,BUTTON_HEIGHT);
+    ctx.font="38px airborne";
+    ctx.fillStyle="azure";
+    ctx.fillText(content,x+8,y+40);
+    ctx.strokeText(content,x+8,y+40);
+    
+    ctx.fillStyle = temp;
+    ctx.strokeStyle = temp2;
+    
+}
+
+function movingMouse(event){
+    mouseX = event.offsetX;
+    mouseY = event.offsetY;
+    console.log(111);
+    if(gameStatus == PLACE_SHIP){
+        if(mouseX > 8 && mouseX <  8 + BUTTON_WIDTH && mouseY > 600 && mouseY < 600 + BUTTON_HEIGHT){
+            redraw();
+            lightButton("Randomise",8,600);
         }
+        else if(mouseX > 8 && mouseX <  8 + BUTTON_WIDTH && mouseY > 660 && mouseY < 660 + BUTTON_HEIGHT){
+            redraw();
+            lightButton("START",8,660);
+        }
+        else
+            redraw();
     }
-    return map;
+}*/
+
+function random(){
+    my_map.resetMap();
+    my_map.randomPlacment();
+    redraw();
+}
+
+function clicked(event){
+    //my_map.shipAttacked(event.offsetX,event.offsetY);
 }
 
 function sound(src){
@@ -74,3 +132,4 @@ function sound(src){
         this.sound.pause();
     }
 }
+
