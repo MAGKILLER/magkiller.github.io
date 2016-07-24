@@ -2,6 +2,7 @@ function Block() {
     this.isAttacked = false;
     this.hasShip = false;
     this.shipType = "NONE";
+    this.attackable = true;
 }
 
 function Ship(x,y,direction,size){
@@ -9,6 +10,7 @@ function Ship(x,y,direction,size){
     this.y = y;
     this.direction = direction;
     this.size = size;
+    this.win = false;
 }
 
 function GameMap(x, y, scale,ctx) {
@@ -53,18 +55,60 @@ function GameMap(x, y, scale,ctx) {
             }
         }
         for(var i = 0 ;i < 5 ; i++){
-            if(count[AIRCRAFT_CARRIER]==5)
+            if(count[AIRCRAFT_CARRIER]==5){
                 this.sinkList[AIRCRAFT_CARRIER]=true;
-            if(count[BATTLESHIP]==4)
+                this.updataAttackable(AIRCRAFT_CARRIER);
+            }
+            if(count[BATTLESHIP]==4){
                 this.sinkList[BATTLESHIP]=true;
-            if(count[CRUISER]==3)
+                this.updataAttackable(BATTLESHIP);
+            }
+            if(count[CRUISER]==3){
                 this.sinkList[CRUISER]=true;
-            if(count[SUBMARINE]==3)
+                this.updataAttackable(CRUISER);
+            }
+            if(count[SUBMARINE]==3){
                 this.sinkList[SUBMARINE]=true;
-            if(count[DESTROYER]==2)
+                this.updataAttackable(SUBMARINE);
+            }
+            if(count[DESTROYER]==2){
                 this.sinkList[DESTROYER]=true;
+                 this.updataAttackable(DESTROYER);
+            }
         }
-        console.log(count);
+        //console.log(count);
+    }
+    
+    this.updataAttackable = function(type){
+        for(var b = 0 ;b < 10 ; b++){
+            for(var a = 0 ;a < 10 ; a++){
+                if(this.mapGrid[a][b].shipType == type){
+                    if(this.inIndex(a-1,b) && !this.hasShip(a-1,b) && !this.mapGrid[a-1][b].isAttacked)
+                        this.mapGrid[a-1][b].attackable = false;
+                    if(this.inIndex(a+1,b) && !this.hasShip(a+1,b) && !this.mapGrid[a+1][b].isAttacked)
+                        this.mapGrid[a+1][b].attackable = false;
+                    if(this.inIndex(a-1,b+1) && !this.hasShip(a-1,b+1) && !this.mapGrid[a-1][b+1].isAttacked)
+                        this.mapGrid[a-1][b+1].attackable = false;
+                    if(this.inIndex(a+1,b+1) && !this.hasShip(a+1,b+1) && !this.mapGrid[a+1][b+1].isAttacked)
+                        this.mapGrid[a+1][b+1].attackable = false;
+                    if(this.inIndex(a-1,b-1) && !this.hasShip(a-1,b-1) && !this.mapGrid[a-1][b-1].isAttacked)
+                        this.mapGrid[a-1][b-1].attackable = false;
+                    if(this.inIndex(a+1,b-1) && !this.hasShip(a+1,b-1) && !this.mapGrid[a+1][b-1].isAttacked)
+                        this.mapGrid[a+1][b-1].attackable = false;
+                    if(this.inIndex(a,b+1) && !this.hasShip(a,b+1) && !this.mapGrid[a][b+1].isAttacked)
+                        this.mapGrid[a][b+1].attackable = false;
+                    if(this.inIndex(a,b-1) && !this.hasShip(a,b-1) && !this.mapGrid[a][b-1].isAttacked)
+                        this.mapGrid[a][b-1].attackable = false;
+                }
+                    
+            }
+        }
+    
+    }
+    this.inIndex = function(a,b){
+        if(a < 0 || a > 9 || b < 0 || b >9)
+            return false; 
+        return true;
     }
     
     this.resetMap = function() {
@@ -100,10 +144,10 @@ function GameMap(x, y, scale,ctx) {
         }
     }
     
-    this.drawMark = function(){
+    this.drawMark = function(shipOption){
         for(var i = 0 ;i < 10 ; i++){
             for(var j = 0 ;j < 10 ; j++){
-                if(this.mapGrid[j][i].hasShip && !this.mapGrid[j][i].isAttacked){
+                if(shipOption  && this.mapGrid[j][i].hasShip && !this.mapGrid[j][i].isAttacked ){
                     var a = this.mapX + j*this.length;
                     var b = this.mapY + i*this.length;
                     this.drawShip(a,b);
@@ -119,6 +163,11 @@ function GameMap(x, y, scale,ctx) {
                     var b = this.mapY + i*this.length;
 					this.drawWave(a,b);
 				}
+                if(!this.mapGrid[j][i].attackable){
+					var a = this.mapX + j*this.length;
+                    var b = this.mapY + i*this.length;
+					this.drawHint(a,b);
+				}
             }
         }
     }
@@ -128,11 +177,31 @@ function GameMap(x, y, scale,ctx) {
 			b=b-this.mapY;
 			a=Math.floor(a/this.length);
 			b=Math.floor(b/this.length);
-			this.mapGrid[a][b].isAttacked=true;
+			this.mapGrid[a][b].isAttacked = true;
+            this.drawMark();
+            this.updateSink();
+            if(this.mapGrid[a][b].hasShip == true){
+                if(this.inIndex(a+1,b+1) && !this.mapGrid[a+1][b+1].isAttacked){
+                    this.mapGrid[a+1][b+1].attackable = false;
+                }
+                if(this.inIndex(a+1,b-1) && !this.mapGrid[a+1][b-1].isAttacked){
+                    this.mapGrid[a+1][b-1].attackable = false;
+                }
+                if(this.inIndex(a-1,b+1) && !this.mapGrid[a-1][b+1].isAttacked){
+                    this.mapGrid[a-1][b+1].attackable = false;
+                }
+                if(this.inIndex(a-1,b-1) && !this.mapGrid[a-1][b-1].isAttacked){
+                    this.mapGrid[a-1][b-1].attackable = false;
+                }
+                this.drawMark();
+                return true;
+            }
+            else{
+                return false;
+            }
 		}
-        this.updateSink();
-		this.drawMark();
-		
+        return true;
+        
 	}
 	
     this.drawShip = function(a,b){
@@ -145,13 +214,20 @@ function GameMap(x, y, scale,ctx) {
     this.drawHit = function(a,b){
         var temp = this.ctx.fillStyle;
         this.ctx.fillStyle = "red";
-        this.ctx.fillRect(a,b,this.length,this.length);
+        this.ctx.fillRect(a,b,this.length,this.length); 
         this.ctx.fillStyle = temp;
     }
     
     this.drawWave = function(a,b){
         var temp = this.ctx.fillStyle;
         this.ctx.fillStyle = "Grey";
+        this.ctx.fillRect(a,b,this.length,this.length);
+        this.ctx.fillStyle = temp;
+    }
+    
+    this.drawHint = function(a,b){
+        var temp = this.ctx.fillStyle;
+        this.ctx.fillStyle = "#DDDDDD";
         this.ctx.fillRect(a,b,this.length,this.length);
         this.ctx.fillStyle = temp;
     }
