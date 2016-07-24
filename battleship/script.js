@@ -31,6 +31,7 @@ var hitX;
 var hitY;
 var hitedBefore = false;
 var hitDirection;
+
 function enermyAI(){
     var x;
     var y;
