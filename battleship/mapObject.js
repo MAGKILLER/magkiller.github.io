@@ -3,6 +3,7 @@ function Block() {
     this.hasShip = false;
     this.shipType = "NONE";
     this.attackable = true;
+    this.shipSize = 0;
 }
 
 function Ship(x,y,direction,size){
@@ -12,7 +13,7 @@ function Ship(x,y,direction,size){
     this.size = size;
     this.win = false;
 }
-
+var bKimage = document.getElementById("OL");
 function GameMap(x, y, scale,ctx) {
     this.x = x;
     this.y = y;
@@ -35,6 +36,17 @@ function GameMap(x, y, scale,ctx) {
     this.sinkList = new Array(5);
     for(var i = 0 ; i < 5 ; i++)
         this.sinkList[i]= false;
+    
+    this.win = function(){
+        for(var i = 0 ; i < 9 ; i++){
+            for(var j = 0 ;j < 10 ; j++){
+                if(this.mapGrid[j][i].hasShip && !this.mapGrid[j][i].isAttacked){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     
     this.updateSink = function (){
         var count = [0,0,0,0,0];
@@ -121,7 +133,7 @@ function GameMap(x, y, scale,ctx) {
             }
         }
     }
-
+    
     this.drawMap = function() {
         this.ctx.font = "" + this.length + "px airborne";
         this.ctx.fillStyle = "rgba(221,221,255,0.6)";
@@ -177,7 +189,41 @@ function GameMap(x, y, scale,ctx) {
 			b=b-this.mapY;
 			a=Math.floor(a/this.length);
 			b=Math.floor(b/this.length);
-			this.mapGrid[a][b].isAttacked = true;
+            if(!this.mapGrid[a][b].attackable || this.mapGrid[a][b].isAttacked){
+                return true;
+            }
+            this.mapGrid[a][b].isAttacked = true;
+            this.drawMark();
+            this.updateSink();
+            if(this.mapGrid[a][b].hasShip == true){
+                shipHit();
+                if(this.inIndex(a+1,b+1) && !this.mapGrid[a+1][b+1].isAttacked){
+                    this.mapGrid[a+1][b+1].attackable = false;
+                }
+                if(this.inIndex(a+1,b-1) && !this.mapGrid[a+1][b-1].isAttacked){
+                    this.mapGrid[a+1][b-1].attackable = false;
+                }
+                if(this.inIndex(a-1,b+1) && !this.mapGrid[a-1][b+1].isAttacked){
+                    this.mapGrid[a-1][b+1].attackable = false;
+                }
+                if(this.inIndex(a-1,b-1) && !this.mapGrid[a-1][b-1].isAttacked){
+                    this.mapGrid[a-1][b-1].attackable = false;
+                }
+                this.drawMark();
+                return true;
+            }
+            else{
+                missedHit();
+                return false;
+            }
+		}
+        return true;
+	}
+    this.aiAttack = function(a,b){
+        if(!this.mapGrid[a][b].attackable || this.mapGrid[a][b].isAttacked){
+                return true;
+            }
+            this.mapGrid[a][b].isAttacked = true;
             this.drawMark();
             this.updateSink();
             if(this.mapGrid[a][b].hasShip == true){
@@ -199,10 +245,8 @@ function GameMap(x, y, scale,ctx) {
             else{
                 return false;
             }
-		}
         return true;
-        
-	}
+    }
 	
     this.drawShip = function(a,b){
         var temp = this.ctx.fillStyle;
@@ -341,12 +385,14 @@ function GameMap(x, y, scale,ctx) {
             for(var i = 0 ; i< size ; i++){
                 this.mapGrid[x+i][y].hasShip = true;
                 this.mapGrid[x+i][y].shipType = name;
+                this.mapGrid[x+i][y].shipSize = size;
             }
         }
         else{
             for(var i = 0 ; i< size ; i++){
                 this.mapGrid[x][y+i].hasShip = true;
                 this.mapGrid[x][y+i].shipType = name;
+                this.mapGrid[x][y+i].shipSize = size;
         }
     }
     

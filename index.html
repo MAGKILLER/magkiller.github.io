@@ -3,6 +3,7 @@
 <head>
 	<title>MAGKiller is Awesome!</title>
 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="MAGKiller是一个游戏实况作者，延时摄影爱好者，山地车和Airsoft玩家！会时不时的分享一些美食教学，互联网科技博客。 本人生活在温哥华，也会有一些生活相关的内容哦~">
 	<meta name="keywords" content="游戏实况，游戏分享，美食，美食教学，Airsoft，软气枪，山地车，温哥华，延时摄影，游戏">
 	<link rel="stylesheet" href="style.css">
@@ -23,11 +24,19 @@
                 <li><a href="about.html">&nbsp;关于&nbsp;</a></li>
             </ul>
         </div>
+        <div class="dropdown">
+            <button class="dropbtn">MENU</button>
+            <div class="dropdown-content">
+                <a href="index.html">主页</a>
+                <a href="blogs.html">杂文</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
     </div>
 </div>
 <div class="wrapper">
     <div class="mid">
-        <div style="text-align:center;margin-top:200px;"><img src="images/mag.png" alt="magkiller"></div>
+        <div id="logo"><img src="images/mag.png" alt="magkiller"></div>
         <div class="infoBox">
         <h2>我是一名<span id="intro"><span style="background:white;color:black;">CS Student</span></span><span id="pointer">&#124;</span></h2>
         <h2>经常混迹于B站、微博和知乎<br>偶尔在Twitter, Youtube出没<br>现在居住在温哥华<br></h2>
@@ -42,11 +51,11 @@
             style="border-width:0" /></a></noscript>
             <!-- End GoStats JavaScript Based Code -->
         </h4>
-        <div style="float:left">
-        <iframe width="500px" height="550px" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=3&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2350148831&verifier=294c9662&dpc=1"></iframe>
+        <div id="weibo">
+        <iframe class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=3&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2350148831&verifier=294c9662&dpc=1"></iframe>
         </div>
-        <div style="margin-left:524px;">
-        <object width="500px" height="350px" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://static.hdslb.com/miniloader.swf?aid=2402282&page=1" /><embed  width="500px" height="350" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf?aid=2402282" /></object>
+        <div id="other" >
+        <object width="500px" height="350px" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="bilibili" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://static.hdslb.com/miniloader.swf?aid=2402282&page=1" /><embed  width="500px" height="350" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf?aid=2402282" /></object>
         <div style="margin-top:24px;height:100px;background:rgba(68,68,68,0.6);color:white;font-size:25px;padding:25px;text-align:center;">如何用JS控制CSS来实现动态文字效果<br><br>
                 <a target="_blank" class="btn" href="blog/dynamic_text.html">阅读全文</a>
         </div>

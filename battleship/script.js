@@ -5,10 +5,9 @@ var dragIndex;
 var gameStatus = 0;
 var control = document.getElementById("commandPanal");
 var myRound = false;
-var hit;
-
 
 function replaceScreen(){ 
+    
     document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\"></canvas>";
     ctx = document.getElementById("game").getContext("2d");
     var temp = true;
@@ -16,6 +15,7 @@ function replaceScreen(){
 }
 
 function startRound(){
+    buttonSound();
     placeShip();
 }
 
@@ -27,35 +27,60 @@ function startGame(){
     myRound = true;
     redraw();
 }
+var randomAttack = true;
+var hitDirection = "no";
+var hitPointing = "no";
+var hitSize = "0";
 var hitX;
 var hitY;
-var hitedBefore = false;
-var hitDirection;
+
+function searchingAttackAI(){
+    //find if have enough space
+    hitSize = my_map.mapGrid[hitX][hitY].shipSize;
+    
+    for(var i = 1 ; i < = )
+}
 
 function enermyAI(){
     var x;
     var y;
-    var keepAttacking = true;
-    while(keepAttacking){
-        do{
-            x = Math.floor(Math.random()*10);
-            y = Math.floor(Math.random()*10);
-        }while(my_map.mapGrid[x][y].isAttacked || checkSurroudForAI(x,y));
-        my_map.mapGrid[x][y].isAttacked = true;
-        if(!my_map.mapGrid[x][y].hasShip){
-            keepAttacking = false;
+    var keeping = true;
+    randomAttack = true;
+    while(keeping){
+        if(randomAttack){
+            do{
+                x = Math.floor(Math.random()*10);
+                y = Math.floor(Math.random()*10);
+            }while(my_map.mapGrid[x][y].isAttacked || checkSurroudForAI(x,y) || !my_map.mapGrid[x][y].attackable);
+            my_map.aiAttack(x,y);
             redraw();
-            hint = "Your turn to attack";
-            redraw();
-            myRound = true;
         }
         else{
+            if(hitDirection == "no"){
+                serchingAttackAI():
+            }
+        }
+        
+        
+        if(my_map.win()){
+            hint = "Enermy win!";
+            keeping = false;
+            redraw();
+            bkgm.stop();
+        }
+        
+        if(my_map.mapGrid[x][y].hasShip){
+            randomAttack = false;
             hitX = x;
             hitY = y;
-            hitedBefore = true;
-            var shipType = my_map.mapGrid[x][y].shipType;
         }
-    }  
+        else{
+            hint = "Your turn to attack";
+            redraw();
+            keeping = false;
+            myRound = true;
+        }  
+    }   
 }
 
 function checkSurroudForAI(x,y){
@@ -71,6 +96,8 @@ function checkSurroudForAI(x,y){
 }
 
 function placeShip(){
+    enemyReady();
+    backMusic.play();
     gameStatus = PLACE_SHIP;
     hint = "Place your ship on the left board";
     my_map = new GameMap(8,50,500,ctx);
@@ -106,6 +133,7 @@ function redraw(){
 }
 
 function random(){
+    buttonSound();
     my_map.resetMap();
     my_map.randomPlacment();
     redraw();
@@ -114,6 +142,14 @@ function random(){
 function clicked(event){
     if(gameStatus == GAME_START && myRound){ 
         var temp = enermy_map.shipAttacked(event.offsetX,event.offsetY);
+        if(enermy_map.win()){
+            myRound = false;
+            hint = "you win!";
+            redraw();
+            bkgm.stop();
+            playerVictory();
+            victory();
+        }
         if (!temp){
             hint = "Enermy's turn";
             redraw();
@@ -138,6 +174,71 @@ function sound(src){
         this.sound.pause();
     }
 }
+
+var audio=new Audio("media/Button.wav");
+var audio1= new Audio("media/Explosion.wav");
+var audio2= new Audio("media/Miss.wav");
+var audio3=new Audio("media/Ship Down.wav");
+var audio4=new Audio("media/Victory.wav");
+var audio5=new Audio("media/Warning.wav");
+var backMusic = new Audio("media/intro.mp3")
+
+function bkgm(){
+	this.play = function(){
+        backMusic.play();
+    }
+    this.stop = function(){
+        backMusic.stop();
+    }
+}
+
+function buttonSound(){
+	//Button Clicked
+	audio.play();
+}
+
+function shipHit(){
+	//statement that tells if a ship is hit
+	audio1.play();
+}
+
+function missedHit(){
+	//Water is hit
+	audio2.play();
+}
+
+function shipSinked(){
+	//Entire enemy boat is sunk
+	audio3.play();
+}
+
+function playerVictory(){
+	//Game is finished
+	audio4.play();
+}
+
+function enemyReady(){
+	//Ships placed
+	audio5.play();
+}
+function victory(){
+    var img=new Image();
+    img.src="BattleShip1.jpg";
+    img.onload=function(){
+        ctx.save();
+        ctx.drawImage(img,112,134);
+        ctx.translate(112,134);
+        ctx.font="42px Airborne";
+        ctx.fillStyle="white";
+        ctx.fillText("Congratulations Captain You Are The Winner!",0,60);
+        ctx.fillText("Play Again?",0,490);
+        ctx.restore();
+    }
+    
+
+}
+
+//Source  - www.soundbible.com
 
 /*function drawButton(content,x,y){
     var temp = ctx.fillStyle;

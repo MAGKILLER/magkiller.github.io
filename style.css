@@ -217,18 +217,40 @@ li{
 .title{
     border: 2px solid white;
 }
+    #weibo{
+        float:left;
+    }
+    
+    iframe{
+        width:500px;
+        height:550px;
+    }
+    
+    #other{
+        margin-left:524px;
+    }
     
 }
 @media only screen and (max-width: 768px) {
     body{
-        width: 90%;
         background-image: url(images/footer_lodyas.png);
         background-repeat: repeat;
         padding: 0;
         margin: auto;
     }
     
+    #wrapper {
+        width:90%;
+        margin: auto;
+    }
+    
     h1{
+        background: rgba(76,175,80,0.6);
+        font-size: 32px;
+        padding-top:5px;
+        padding-bottom:5px;
+        margin-top: 0;
+        width:100%;
         font-family:'Roboto', sans-serif;
         color: white;
         -webkit-text-shadow: 0 0 3px #41f468;
@@ -242,6 +264,7 @@ li{
     }
     
     .dropbtn {
+        height: 48px;
         text-align: center;
         background-color: #4CAF50;
         color: white;
@@ -252,13 +275,14 @@ li{
     }
 
     .dropdown {
-        height: 0;
-        top:-70px;
-        left:80%;
+        height: 48px;
+        right:0px;
+        top:0px;
         text-align: left;
-        position: relative;
+        position: absolute;
         display: inline-block;
         z-index: 8;
+        
     }
 
     .dropdown-content {
@@ -347,14 +371,28 @@ li{
     h4{
         font-size:2.5em;
         font-family:SimHei,"Microsoft YaHei";
+        margin-top: 0px;
         margin-bottom: 15px;
         color: white;
         font-weight: bold;
         text-align: center;
         text-shadow: 0 0 10px green, 0 0 1px black;
     }
-    .mid{
-        position: relative;
-        top: -100px;
+    #weibo{
+        float:none;
     }
+    iframe{
+        display: none;
+        width:100%;
+        height:250px;
+    }
+    #bilibili{
+        display: none;
+    }
+    #logo{
+        margin-left: 18%
+    }
+    .top span{
+    color:#41f468;
+}
 }
