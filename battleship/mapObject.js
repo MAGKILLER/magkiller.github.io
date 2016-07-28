@@ -4,6 +4,7 @@ function Block() {
     this.shipType = "NONE";
     this.attackable = true;
     this.shipSize = 0;
+    this.direction = "no"
 }
 
 function Ship(x,y,direction,size){
@@ -133,10 +134,11 @@ function GameMap(x, y, scale,ctx) {
             }
         }
     }
-    
+    this.imgBG = document.getElementById("LB");
     this.drawMap = function() {
         this.ctx.font = "" + this.length + "px airborne";
         this.ctx.fillStyle = "rgba(221,221,255,0.6)";
+        this.ctx.drawImage(this.imgBG,10,10,450,450,this.x + this.length, this.y + this.length, this.scale - this.length, this.scale - this.length);
         this.ctx.fillRect(this.x + this.length, this.y + this.length, this.scale - this.length, this.scale - this.length);
         this.ctx.strokeRect(this.x, this.y, this.scale, this.scale);
         this.ctx.fillStyle = "#ddddff";
@@ -193,6 +195,7 @@ function GameMap(x, y, scale,ctx) {
                 return true;
             }
             this.mapGrid[a][b].isAttacked = true;
+            console.log(a + ", " + b);
             this.drawMark();
             this.updateSink();
             if(this.mapGrid[a][b].hasShip == true){
@@ -220,6 +223,7 @@ function GameMap(x, y, scale,ctx) {
         return true;
 	}
     this.aiAttack = function(a,b){
+        console.log(a + ", " + b);
         if(!this.mapGrid[a][b].attackable || this.mapGrid[a][b].isAttacked){
                 return true;
             }
@@ -379,13 +383,12 @@ function GameMap(x, y, scale,ctx) {
     }
     
     this. placeShip = function(x,y,name,direction,size){
-        var tempShip = new Ship(x,y,direction,size);
-        this.ships.push(tempShip);
         if(direction == HORIZONTAL){
             for(var i = 0 ; i< size ; i++){
                 this.mapGrid[x+i][y].hasShip = true;
                 this.mapGrid[x+i][y].shipType = name;
                 this.mapGrid[x+i][y].shipSize = size;
+                this.mapGrid[x+i][y].direction = direction;
             }
         }
         else{
@@ -393,6 +396,7 @@ function GameMap(x, y, scale,ctx) {
                 this.mapGrid[x][y+i].hasShip = true;
                 this.mapGrid[x][y+i].shipType = name;
                 this.mapGrid[x][y+i].shipSize = size;
+                this.mapGrid[x][y+i].direction = direction;
         }
     }
     
