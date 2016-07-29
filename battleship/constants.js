@@ -13,3 +13,5 @@ const WELCOME = 7;
 const MENU =8;
 const STORY_MODE = 9;
 const OPTION = 10;
+const MISSION = 11;
+const WIN = 12;

@@ -177,7 +177,7 @@ function GameMap(x, y, scale,ctx) {
                     var b = this.mapY + i*this.length;
 					this.drawWave(a,b);
 				}
-                if(!this.mapGrid[j][i].attackable){
+                if(!this.mapGrid[j][i].attackable && hintSys){
 					var a = this.mapX + j*this.length;
                     var b = this.mapY + i*this.length;
 					this.drawHint(a,b);
