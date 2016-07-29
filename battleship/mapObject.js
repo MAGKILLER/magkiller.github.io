@@ -39,7 +39,7 @@ function GameMap(x, y, scale,ctx) {
         this.sinkList[i]= false;
     
     this.win = function(){
-        for(var i = 0 ; i < 9 ; i++){
+        for(var i = 0 ; i < 10 ; i++){
             for(var j = 0 ;j < 10 ; j++){
                 if(this.mapGrid[j][i].hasShip && !this.mapGrid[j][i].isAttacked){
                     return false;
@@ -377,7 +377,7 @@ function GameMap(x, y, scale,ctx) {
             direction = Math.floor(Math.random()*2);
             x = Math.floor(Math.random()*10);
             y = Math.floor(Math.random()*10);
-        }while(!this.isPlaceable(x,y,direction,4));
+        }while(!this.isPlaceable(x,y,direction,2));
         
         this.placeShip(x,y,DESTROYER,direction,2);
     }

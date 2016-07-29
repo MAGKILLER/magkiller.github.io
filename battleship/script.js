@@ -23,6 +23,7 @@ var audio4 = new Audio("media/Victory.wav");
 var audio5 = new Audio("media/Warning.wav");
 var backMusic = new Audio("media/intro.mp3");
 var waveSound = new Audio("media/Menu_Backgroud_music.mp3");
+var levelStatus = 0;
 
 /*function option(){
     gameStatus = OPTION;
@@ -147,7 +148,7 @@ function chinaLevel(){
 }
 
 function replaceScreen() {
-    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\" onmousedown=\"mouseDown(event)\" onmousemove=\"mouseMove(event)\" onmouseup=\"mouseUp(event)\" onkeydown=\"keyRotate(event)\"></canvas>";
+    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\" onmousedown=\"mouseDown(event)\" onmousemove=\"mouseMove(event)\" onmouseup=\"mouseUp(event)\" onwheel=\"keyRotate(event)\"></canvas>";
     ctx = document.getElementById("game").getContext("2d");
     backgroundIMG = document.getElementById("BK");
     var temp = true;
@@ -162,7 +163,7 @@ function replaceScreen() {
 }
 
 function replaceScreen() {
-    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\" onmousedown=\"mouseDown(event)\" onmousemove=\"mouseMove(event)\" onmouseup=\"mouseUp(event)\" onkeydown=\"keyRotate(event)\"></canvas>";
+    document.getElementById("screen").innerHTML = "<canvas id=\"game\" width=\"1024\" height=\"768\"  onClick=\"clicked(event)\" onmousedown=\"mouseDown(event)\" onmousemove=\"mouseMove(event)\" onmouseup=\"mouseUp(event)\" onwheel=\"keyRotate(event)\"></canvas>";
     ctx = document.getElementById("game").getContext("2d");
     backgroundIMG = document.getElementById("BK");
     var temp = true;
@@ -206,11 +207,9 @@ function menu() {
     var leftMargin = 250;
     ctx.fillText("Story mode", leftMargin, 108);
     ctx.fillText("Classic", leftMargin, 188);
-    ctx.fillText("Option", leftMargin, 268);
     ctx.fillText("Rename", leftMargin, 348);
     ctx.strokeText("Story mode", leftMargin, 108);
     ctx.strokeText("Classic", leftMargin, 188);
-    ctx.strokeText("Option", leftMargin, 268);
     ctx.strokeText("Rename", leftMargin, 348);
     var d = new Date();
     var n = d.toUTCString();
@@ -284,8 +283,6 @@ function startGame() {
     waveSound.currentTime = 0;
     gameStatus = GAME_START;
     hint = "Your turn to attack";
-    var temp = "<button onclick=\"startRound()\">Restart</button>";
-    document.getElementById("commandPanal").innerHTML = temp;
     myRound = true;
     redraw();
 }
@@ -311,9 +308,6 @@ function placeShip() {
     hint = "Place your ship on the left board";
     my_map = new GameMap(8, 230, 500, ctx);
     enermy_map = new GameMap(516, 230, 500, ctx);
-    var temp = "<button onclick=\"random()\">RANDOMISE</button>";
-    temp += "<button onclick=\"startGame()\">START</button>";
-    document.getElementById("commandPanal").innerHTML = temp;
     my_map.resetMap();
     my_map.randomPlacment();
     enermy_map.resetMap();
@@ -349,7 +343,20 @@ function redraw() {
         ctx.fillText("Restart", 270, 26);
         ctx.fillText("Menu", 625, 26);
     }
-    
+    ctx.fillStyle = "Yellow";
+    ctx.font = "20px airborne";
+   if(levelStatus == 0){
+        
+        
+        ctx.fillText("You can not customize your board yet, just Start the game.", 28, 176);
+    }
+    else if(levelStatus == 1){
+        ctx.fillText("You just unlock the customize function, try drag and use mouse wheel boat!", 28, 176);
+    }
+    else if(levelStatus == 2){
+        ctx.fillText("Randomise function now avalibale!", 28, 176);
+    }
+    ctx.fillStyle = "black";
     ctx.font = "30px airborne";
     ctx.fillText("- " + hint, 8, 8 + 30 + 180);
     ctx.font = "38px airborne";
@@ -380,6 +387,7 @@ var headY;
 var moveShip;
 var moveSize;
 var moveDirection;
+var orgDirec;
 var xDif;
 var yDif;
 var onAction = false;
@@ -413,7 +421,7 @@ function mouseUp(event) {
         }
         else{
             onAction = false;
-            my_map.placeShip(headX, headY, moveShip, moveDirection, moveSize);
+            my_map.placeShip(headX, headY, moveShip, orgDirec, moveSize);
         }
         redraw();
     }
@@ -450,6 +458,7 @@ function mouseDown(event) {
             onAction = true;
             moveShip = my_map.mapGrid[x][y].shipType;
             moveDirection = my_map.mapGrid[x][y].direction;
+            orgDirec = moveDirection;
             moveSize = my_map.mapGrid[x][y].shipSize;
             loop1:
                 for (var i = 0; i < 10; i++) {
@@ -494,17 +503,34 @@ function clicked(event) {
             clearInterval(showingText);
             canadaLevel();
         }else if(x > 200 && x < 400  && y > 220 && y< 220+40){
-            clearInterval(showingText);
-            usaLevel();
+            if(levelStatus < 1){
+                alert("Please complete last level!");
+            }else{
+                clearInterval(showingText);
+                usaLevel();
+            }
+            
         }else if(x > 200 && x < 400  && y > 270 && y< 270+40){
-            clearInterval(showingText);
-            ukLevel();
+            if(levelStatus < 2){
+                alert("Please complete last level!");
+            }else{
+                clearInterval(showingText);
+                ukLevel();
+            }
         }else if(x > 200 && x < 400  && y > 320 && y< 320+40){
-            clearInterval(showingText);
-            russiaLevel();
+            if(levelStatus < 3){
+                alert("Please complete last level!");
+            }else{
+                clearInterval(showingText);
+                russiaLevel();
+            }
         }else if(x > 200 && x < 400  && y > 370 && y< 370+40){
-            clearInterval(showingText);
-            chinaLevel();
+            if(levelStatus < 3){
+                alert("Please complete last level!");
+            }else{
+                clearInterval(showingText);
+                chinaLevelLevel();
+            }
         }else if(x > 640 && x < 740  && y > 490 && y< 490+40){
             clearInterval(showingText);
             menu();
@@ -545,14 +571,17 @@ function clicked(event) {
             myRound = false;
             hint = "you win!";
             gameStatus = WIN;
-            if(levelInfo = "canada"){
+            if(levelInfo == "canada"){
+                levelStatus = 1;
                 canCustom = true;
             }
-            if(levelInfo = "usa"){
+            if(levelInfo == "usa"){
                 canRandom = true;
+                levelStatus = 2;
             }
-            if(levelInfo = "uk"){
+            if(levelInfo == "uk"){
                 classicMode = true;
+                levelStatus = 3;
             }
             redraw();
             var index = 768;
@@ -835,6 +864,7 @@ function enermyAI() {
         if (my_map.win()) {
             hint = "Enermy win!";
             keeping = false;
+            ctx.fillText("you lose!", 300,300)
             redraw();
             bkgm.stop();
         }
