@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dynamic Text Demo</title>
+    <meta charset="utf-8">
+    <script>
+        var indexOfId = 0;
+        var textArray = [
+            "The text will change here!",
+            "It is created by",
+            "MAGKiller!",
+            "This is a demo of Dynamic Text."
+        ]; //the words that you want to show
+        var numberOfId = textArray.length;
+        var tv = setInterval(setContent, 4000); //loop for change the words(every 4s)
+        function setContent() {
+            if (indexOfId == numberOfId) {
+                indexOfId = 0;
+            }
+            display(textArray[indexOfId]);
+            indexOfId++;
+        }
+
+        function display(content) {
+            var indexOfLetter = 0;
+            var indexOfSpan = 0;
+            var displayTimer;
+            var selectionTimer;
+            var text = "";
+            var n = content.length;
+            document.getElementById("intro").innerHTML = text; //clear the text
+            setTimeout(delay, 600); //delay 0.6s after clearing
+            setTimeout(selction_delay, 3000); //wait for 3s, then star the seletion animation.
+            function delay() {
+                displayTimer = setInterval(displayInfo, 80); //print a letter for every 0.08s. (control the speed of typing animation)
+            }
+
+            function selction_delay() {
+                selectionTimer = setInterval(selction_anime, 15); //"select" a letter for every 0.015s.(control the speed of selection animation)
+            }
+
+            function displayInfo() {
+                if (indexOfLetter == 0) {
+                    text = text + "<span id=\"" + "a" + indexOfLetter + "\">" + content.charAt(indexOfLetter) + "</span>";
+                    indexOfLetter++;
+                } else if (indexOfLetter < n) {
+                    text = text + "<span id=\"" + "a" + indexOfLetter + "\">" + content.charAt(indexOfLetter) + "</span>";
+                    indexOfLetter++;
+                } else {
+                    clearInterval(displayTimer);
+                }
+                document.getElementById("intro").innerHTML = text;
+            }
+
+            function selction_anime() {
+                var idName = "a" + indexOfSpan;
+                if (indexOfSpan == 0) {
+                    document.getElementById(idName).style.backgroundColor = "black";
+                    document.getElementById(idName).style.color = "white";
+                    indexOfSpan++;
+                } else if (indexOfSpan < n) {
+                    document.getElementById(idName).style.backgroundColor = "black";
+                    document.getElementById(idName).style.color = "white";
+                    indexOfSpan++;
+                } else {
+                    clearInterval(selectionTimer);
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+        #pointer {
+            -webkit-animation-name: pointer-anime;
+            /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 1s;
+            /* Chrome, Safari, Opera */
+            -webkit-animation-iteration-count: infinite;
+            /* Chrome, Safari, Opera */
+            animation-name: pointer-anime;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        /* Chrome, Safari, Opera */
+        
+        @-webkit-keyframes pointer-anime {
+            0% {
+                opacity: 0
+            }
+            49% {
+                opacity: 0
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        /* Standard syntax */
+        
+        @keyframes pointer-anime {
+            0% {
+                opacity: 0
+            }
+            49% {
+                opacity: 0
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                opacity: 1
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1><span id="intro"><span style="background:black;color:white;">This is a demo of Dynamic Text.</span></span><span id="pointer">|</span></h1>
+    </div>
+</body>
+
+</html>
