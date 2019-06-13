@@ -34,7 +34,7 @@ const SHOOTING_DELAY = 45;
 const CANIN_BULLET_SPEED = 0.05;
 
 function setUp(){
-    gameState = 'none';
+    gameState = 'start';
     vertciesBuffer = [];
     colorsBuffer = [];
     canon = vec2(-0.05,-0.9);
