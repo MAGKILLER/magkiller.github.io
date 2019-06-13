@@ -250,7 +250,7 @@ function droping(){
             if(invaders[jj][ii] != null){
                 invaders[jj][ii][1] -= DROPPING_SPEED;
                 if(invaders[jj][ii][1] < -1 + invader_size){
-                    gameState = 'end';
+                    gameState = 'lose';
                 }
             }
         }
