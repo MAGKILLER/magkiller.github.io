@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute vec4 vPosition;
+attribute vec4 colors;
+varying vec4 varyingColors;
+
+void
+main()
+{
+    gl_Position = vPosition;
+    varyingColors = colors;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+varying vec4 varyingColors;
+
+void
+main()
+{
+    gl_FragColor = varyingColors;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="assignment1.js"></script>
+<style>
+	#upper {
+		background-color: #5555FF;
+		margin:auto;
+		padding: 10px 50px 50px 50px;
+		width: 600px;
+		text-align:center;
+	}
+	#score {
+		background-color: #000000;
+		width: 512px;
+		margin: 0 auto 0 auto;
+		padding:0;
+	}
+	#gl-canvas{
+		margin:0;
+		padding:0;
+	}
+	.score{
+		color: yellow;
+		font-size: 20px;	
+	}
+
+	h1 {
+	  color: yellow;
+	  font-size: 80px;
+	  text-shadow: 0px -5px #BBBBBB;
+	  margin:0;
+	} 
+</style>
+<body>
+	<div id="upper">
+		<h1>SPACE</h1>
+		<h1>INVADER</h1>
+		<canvas id="gl-canvas" width="512" height="512">>
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
+		<div class="score">Press "R" t restart, Press "Q" to quit the Game.</div>
+		<div class="score">Press "<-" and "->" to control Canon</div>
+	</div>
+
+</body>
+</html>
